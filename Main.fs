@@ -6,8 +6,9 @@ open OpenPriceMap
 [<EntryPoint>]
 let main argv =
   printfn "%A" argv
-  let baseUrl = "http://localhost:999"
+  let baseUrl = "http://localhost:3000"
   use app = WebApp.Start<Startup>(baseUrl)
-  Console.WriteLine("Press any key to quit")
+  printfn "Server started localhost:3000"
+  printfn "Press any key to quit"
   Console.ReadKey() |> ignore
   0
