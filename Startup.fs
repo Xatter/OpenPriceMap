@@ -3,6 +3,18 @@ namespace OpenPriceMap
   open Microsoft.Owin
   open System.Web.Http
 
+  type HomeController() =
+    inherit ApiController()
+    member x.Get() =
+      "Hello"
+
+  type ItemController() =
+    inherit ApiController()
+    member x.Get() =
+      async {
+        return ["Item1", "Item2"]
+      } |> Async.StartAsTask
+
   type Config = {
     id : RouteParameter
   }
